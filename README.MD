@@ -21,5 +21,5 @@ poetry run python idle_core
 or
 
 ```ssh
-python run idle_core
+python idle_core
 ```
