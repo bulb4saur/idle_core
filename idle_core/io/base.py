@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Optional
 
-from idle_core.models.player import Player
+from idle_core.models import Player
 
 
 class BaseIO(ABC):
