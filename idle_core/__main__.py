@@ -1,8 +1,11 @@
 import uuid
 from time import sleep
 
+import structlog
+
 from idle_core.world.world import World
 
+logger = structlog.get_logger()
 # get player id
 PLAYER_ID = str(uuid.UUID(int=uuid.getnode()))
 
@@ -11,7 +14,7 @@ world = World(player_id=PLAYER_ID)
 player = world.load_player()
 
 while True:
-    print(f"Current gold coins: {player.currency_inventory.golden_coins}")
+    logger.info(f"Current gold coins: {player.currency_inventory.golden_coins}")
 
     # update player every tic
     world.update_player(player)

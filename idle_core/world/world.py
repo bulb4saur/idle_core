@@ -1,8 +1,6 @@
-import logging
-
 import structlog
 from idle_core.io import BasicFileIO
-from idle_core.models.player import BaseStats, Player, PlayerCurrencyInventory
+from idle_core.models import BaseStats, Player, PlayerCurrencyInventory
 
 logger = structlog.get_logger()
 
@@ -22,7 +20,7 @@ class World:
         loaded_player = self._io.load_game(saved_game_id=self._player_id)
 
         if not loaded_player:
-            logger.info("loading new player")
+            logger.debug("loading new player")
             new_player = Player(id=self._player_id, stats=BaseStats(), currency_inventory=PlayerCurrencyInventory())
             return new_player
 

@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from typing import Optional
 
 from idle_core.models.player import Player
 
@@ -9,5 +10,5 @@ class BaseIO(ABC):
         ...
 
     @abstractmethod
-    def load_game(self, saved_game_id: str) -> Player:
+    def load_game(self, saved_game_id: str) -> Optional[Player]:
         ...

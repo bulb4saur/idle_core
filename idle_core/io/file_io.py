@@ -3,7 +3,7 @@ import os
 from typing import Optional
 
 from idle_core.io.base import BaseIO
-from idle_core.models.player import Player
+from idle_core.models import Player
 
 
 class BasicFileIO(BaseIO):
